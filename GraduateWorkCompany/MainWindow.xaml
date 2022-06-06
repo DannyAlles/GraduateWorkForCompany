@@ -1,0 +1,99 @@
+﻿<Window x:Class="GraduateWorkCompany.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:GraduateWorkCompany.Properties"
+        xmlns:local="clr-namespace:GraduateWorkCompany"
+        mc:Ignorable="d"
+        Title="MedCompany" Height="450" Width="800">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="6"/>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9"/>
+            <RowDefinition Height="181*"/>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="5"/>
+        </Grid.RowDefinitions>
+
+        
+        <!--Конец строки заголовка-->
+        <!--Градиент главного фрейма-->
+        <Border Background="#d4fdc8" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"/>
+        <Border Grid.Column="2" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.RowSpan="2">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#d9ead3" Offset="0"/>
+                    <GradientStop Color="#aafd96" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+        <Frame x:Name="MainFrame" Grid.Column="2" Grid.Row="1" NavigationUIVisibility="Hidden" Grid.RowSpan="2" />
+
+        <!--Имя пользователя или кнопка войти-->
+        <TextBlock x:Name="LoginLB" Margin="10 0 0 0" Text="{Binding Source={x:Static 
+                                                            p:Settings.Default}, 
+                                                            Path=UserLogin, 
+                                                            Mode=OneWay}" 
+                   Grid.Column="1" Grid.Row="2" Cursor="Hand" 
+                   FontSize="15" VerticalAlignment="Center" 
+                   MouseLeftButtonDown="TextBlock_MouseLeftButtonDown">
+            <TextBlock.ToolTip>
+                <ToolTip>
+                    Нажмите, чтобы выйти
+                </ToolTip>
+            </TextBlock.ToolTip>
+            <TextBlock.Style>
+                <Style TargetType="TextBlock" BasedOn="{StaticResource CreateTBlock}">
+                    <Setter Property="Foreground" Value="#00cc66"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="#00994D"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        
+        <!--Меню-->
+        <ListView x:Name="MenuList" Style="{DynamicResource MenuLV}" Grid.Row="1" Margin="0 10 0 0" Grid.Column="1" FontWeight="Normal">
+            <ListViewItem MouseLeftButtonUp="ListViewItem_MouseLeftButtonUp">Создание</ListViewItem>
+            <ListViewItem MouseLeftButtonUp="ListViewItem_MouseLeftButtonUp">Печать</ListViewItem>
+            <ListViewItem MouseLeftButtonUp="ListViewItem_MouseLeftButtonUp">Список</ListViewItem>
+            <ListViewItem MouseLeftButtonUp="ListViewItem_MouseLeftButtonUp">Настройки</ListViewItem>
+            <ListViewItem MouseLeftButtonUp="ListViewItem_MouseLeftButtonUp">Импорт/экспорт</ListViewItem>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <Grid Name="RootPanel" Background="Transparent" Height="48">
+                                    <Rectangle Name="SelectedBorder" Width="3" Fill="#00ff80"
+                                       HorizontalAlignment="Left" Visibility="Collapsed" />
+                                    <ContentPresenter Margin="10 0 0 0" VerticalAlignment="Center"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="SelectedBorder" Property="Visibility" Value="Visible" />
+                                        <Setter Property="Background" TargetName="RootPanel" Value="#99fdc9"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" TargetName="RootPanel" Value="#00cc66"/>
+                                        <Setter Property="Foreground" Value="#33fe98" />
+                                        <Setter Property="Cursor" TargetName="RootPanel" Value="Hand"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+    </Grid>
+</Window>
