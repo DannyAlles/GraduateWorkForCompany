@@ -26,24 +26,24 @@ namespace GraduateWorkCompany.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string UserLogin {
+        public string ClientFIO {
             get {
-                return ((string)(this["UserLogin"]));
+                return ((string)(this["ClientFIO"]));
             }
             set {
-                this["UserLogin"] = value;
+                this["ClientFIO"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("00000000-0000-0000-0000-000000000000")]
-        public global::System.Guid UserId {
+        public global::System.Guid ClientId {
             get {
-                return ((global::System.Guid)(this["UserId"]));
+                return ((global::System.Guid)(this["ClientId"]));
             }
             set {
-                this["UserId"] = value;
+                this["ClientId"] = value;
             }
         }
     }

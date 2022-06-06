@@ -1,6 +1,7 @@
 ﻿using GraduateWorkCompany.Data.Models;
 using GraduateWorkCompany.Data.Repositories;
 using GraduateWorkCompany.Domain.Exception;
+using GraduateWorkCompany.Properties;
 using System;
 using System.Security.Cryptography;
 using System.Text;
@@ -40,6 +41,23 @@ namespace GraduateWorkCompany.Domain.Services
                 client.Password = _hashService.GetHash(sha256Hash, password);
             }
             await _clientRepository.CreateClient(client).ConfigureAwait(false);
+        }
+
+        public async Task Authorize(Client client, string password)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                if(!_hashService.VerifyHash(sha256Hash, password, client.Password)) throw new PasswordNotEqualException();
+
+                Settings.Default.ClientId = client.Id;
+                Settings.Default.ClientFIO = client.FIO;
+                Settings.Default.Save();
+            }
+        }
+
+        public async Task<Client> GetClientByLogin(string login)
+        {
+            return await _clientRepository.GetClientByLogin(login).ConfigureAwait(false);
         }
     }
 }

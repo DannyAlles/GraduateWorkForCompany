@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GraduateWorkCompany.Domain.Exception;
+using GraduateWorkCompany.Domain.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,12 +27,33 @@ namespace GraduateWorkCompany.Pages
             InitializeComponent();
         }
 
-        private void AuthoriBT_Click(object sender, RoutedEventArgs e)
+        private async void AuthoriBT_Click(object sender, RoutedEventArgs e)
         {
 
+            try
+            {
+                var clientService = new ClientService();
+                
+                var client = await clientService.GetClientByLogin(LoginTB.Text).ConfigureAwait(false);
+                
+                if (client != null)
+                {
+                    await clientService.Authorize(client, PasswordTB.Password).ConfigureAwait(false);
+
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        ManagerFrame.frame.Navigate(new TimetablePage());
+                    });
+                }
+                else MessageBox.Show("Пользователь не найден", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (PasswordNotEqualException)
+            {
+                MessageBox.Show("Неверный пароль", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
-        private void RegistrationBT_Click(object sender, RoutedEventArgs e)
+        private void RegistrationBT_Click(object sender, RoutedEventArgs e) 
         {
             ManagerFrame.frame.Navigate(new RegistrationPage());
         }
