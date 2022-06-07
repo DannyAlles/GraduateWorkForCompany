@@ -134,6 +134,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\CabListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ClientAccountPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -189,9 +193,16 @@
     <Compile Include="Migrations\202206071157039_UpdatedClient.designer.cs">
       <DependentUpon>202206071157039_UpdatedClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206071400519_FixedCab.cs" />
+    <Compile Include="Migrations\202206071400519_FixedCab.designer.cs">
+      <DependentUpon>202206071400519_FixedCab.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Pages\AuthorizationPage.xaml.cs">
       <DependentUpon>AuthorizationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CabListPage.xaml.cs">
+      <DependentUpon>CabListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ClientAccountPage.xaml.cs">
       <DependentUpon>ClientAccountPage.xaml</DependentUpon>
@@ -238,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206071157039_UpdatedClient.resx">
       <DependentUpon>202206071157039_UpdatedClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206071400519_FixedCab.resx">
+      <DependentUpon>202206071400519_FixedCab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

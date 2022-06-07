@@ -13,7 +13,7 @@ namespace GraduateWorkCompany.Data.Models
         public string Number { get; set; }
 
         [MaxLength(255)]
-        public string Descriptiom { get; set; }
+        public string Description { get; set; }
 
         public IEnumerable<Appointment> Appointments { get; set; }
         public IEnumerable<DoctorTimetable> DoctorTimetables { get; set; }

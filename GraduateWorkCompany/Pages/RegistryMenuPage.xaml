@@ -11,6 +11,7 @@
     <Grid>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10">
             <TextBlock x:Name="AccountBT" Text="Мой аккаунт" Margin="0 0 30 0" MouseLeftButtonUp="AccountBT_MouseLeftButtonUp" FontSize="15" Cursor="Hand"/>
+            <TextBlock x:Name="CabBT" Text="Список кабинетов" Margin="0 0 30 0" MouseLeftButtonUp="CabBT_MouseLeftButtonUp" FontSize="15" Cursor="Hand"/>
         </StackPanel>   
     </Grid>
 </Page>

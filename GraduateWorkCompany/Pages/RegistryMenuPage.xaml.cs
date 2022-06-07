@@ -29,5 +29,10 @@ namespace GraduateWorkCompany.Pages
         {
             ManagerFrame.Frame.Navigate(new RegistryAccountPage());
         }
+
+        private void CabBT_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            ManagerFrame.Frame.Navigate(new CarListPage());
+        }
     }
 }
