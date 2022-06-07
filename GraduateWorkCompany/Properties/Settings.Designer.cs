@@ -46,5 +46,17 @@ namespace GraduateWorkCompany.Properties {
                 this["ClientId"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsRegistry {
+            get {
+                return ((bool)(this["IsRegistry"]));
+            }
+            set {
+                this["IsRegistry"] = value;
+            }
+        }
     }
 }

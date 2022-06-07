@@ -110,15 +110,22 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Data\MedContext.cs" />
+    <Compile Include="Data\Models\Appointment.cs" />
     <Compile Include="Data\Models\BaseEntity.cs" />
+    <Compile Include="Data\Models\Cab.cs" />
     <Compile Include="Data\Models\Client.cs" />
+    <Compile Include="Data\Models\Doctor.cs" />
+    <Compile Include="Data\Models\DoctorTimetable.cs" />
+    <Compile Include="Data\Models\Registry.cs" />
     <Compile Include="Data\Repositories\ClientRepository.cs" />
+    <Compile Include="Data\Repositories\RegistryRepository.cs" />
     <Compile Include="Domain\Exception\LoginIsAlreadyExistsException.cs" />
     <Compile Include="Domain\Exception\PasswordIsEmptyException.cs" />
     <Compile Include="Domain\Exception\PasswordNotEqualException.cs" />
     <Compile Include="Domain\Exception\PhoneIsAlreadyExistsException.cs" />
     <Compile Include="Domain\Services\ClientService.cs" />
     <Compile Include="Domain\Services\HashSevice.cs" />
+    <Compile Include="Domain\Services\RegistryService.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -127,7 +134,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ClientAccountPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ClientMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\RegistrationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RegistryMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RegistryRegistrationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -143,10 +166,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\DictionaryTextBlocks.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ManagerFrame.cs" />
@@ -154,12 +173,32 @@
     <Compile Include="Migrations\202206061513519_Init.designer.cs">
       <DependentUpon>202206061513519_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206070417273_AddedAppointment.cs" />
+    <Compile Include="Migrations\202206070417273_AddedAppointment.designer.cs">
+      <DependentUpon>202206070417273_AddedAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206071021240_AddedRegistry.cs" />
+    <Compile Include="Migrations\202206071021240_AddedRegistry.designer.cs">
+      <DependentUpon>202206071021240_AddedRegistry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Pages\AuthorizationPage.xaml.cs">
       <DependentUpon>AuthorizationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ClientAccountPage.xaml.cs">
+      <DependentUpon>ClientAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ClientMenuPage.xaml.cs">
+      <DependentUpon>ClientMenuPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegistryMenuPage.xaml.cs">
+      <DependentUpon>RegistryMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegistryRegistrationPage.xaml.cs">
+      <DependentUpon>RegistryRegistrationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\TimetablePage.xaml.cs">
       <DependentUpon>TimetablePage.xaml</DependentUpon>
@@ -179,6 +218,12 @@
     </Compile>
     <EmbeddedResource Include="Migrations\202206061513519_Init.resx">
       <DependentUpon>202206061513519_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206070417273_AddedAppointment.resx">
+      <DependentUpon>202206070417273_AddedAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206071021240_AddedRegistry.resx">
+      <DependentUpon>202206071021240_AddedRegistry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

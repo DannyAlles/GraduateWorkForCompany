@@ -51,6 +51,7 @@ namespace GraduateWorkCompany.Domain.Services
 
                 Settings.Default.ClientId = client.Id;
                 Settings.Default.ClientFIO = client.FIO;
+                Settings.Default.IsRegistry = false;
                 Settings.Default.Save();
             }
         }

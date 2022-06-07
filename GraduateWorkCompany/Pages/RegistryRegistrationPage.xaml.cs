@@ -2,42 +2,47 @@
 using GraduateWorkCompany.Domain.Exception;
 using GraduateWorkCompany.Domain.Services;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace GraduateWorkCompany.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для RegistrationPage.xaml
+    /// Логика взаимодействия для RegistryRegistrationPage.xaml
     /// </summary>
-    public partial class RegistrationPage : Page
+    public partial class RegistryRegistrationPage : Page
     {
-        private readonly ClientService _clientService;
+        private readonly RegistryService _registryService;
 
-        public RegistrationPage()
+        public RegistryRegistrationPage()
         {
             InitializeComponent();
-            _clientService = new ClientService();
+            _registryService = new RegistryService();
         }
 
         private async void RegistrationBT_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                Client client = new Client()
+                Registry registry = new Registry()
                 {
                     FIO = FIOTB.Text,
                     Login = LoginTB.Text,
-                    Number = NumberTB.Text,
-                    Seria = SeriaTB.Text,
-                    Phone = PhoneTB.Text,
-                    Gender = FemRB.IsChecked.Value ? Gender.Female : Gender.Male,
-                    BirthAt = BirthDP.SelectedDate.Value,
-                    CreatedAt = DateTime.UtcNow,
+                    Phone = PhoneTB.Text
                 };
 
-                await _clientService.CreateClient(client, RePasswordTB.Password, PasswordTB.Password).ConfigureAwait(false);
-
+                await _registryService.CreateRegistry(registry, PasswordTB.Password, RePasswordTB.Password).ConfigureAwait(false);
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     ManagerFrame.Frame.Navigate(new AuthorizationPage());

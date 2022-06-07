@@ -10,12 +10,12 @@
     <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="6"/>
-            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="0"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="5"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="9"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="181*"/>
             <RowDefinition Height="9*"/>
             <RowDefinition Height="5"/>
@@ -35,65 +35,7 @@
         </Border>
 
         <Frame x:Name="MainFrame" Grid.Column="2" Grid.Row="1" NavigationUIVisibility="Hidden" Grid.RowSpan="2" />
+        <Frame x:Name="MenuFrame" Grid.Column="2" Grid.Row="0" NavigationUIVisibility="Hidden" />
 
-        <!--Имя пользователя или кнопка войти-->
-        <TextBlock x:Name="LoginLB" Margin="10 0 0 0" Text="{Binding Source={x:Static 
-                                                            p:Settings.Default}, 
-                                                            Path=UserLogin, 
-                                                            Mode=OneWay}" 
-                   Grid.Column="1" Grid.Row="2" Cursor="Hand" 
-                   FontSize="15" VerticalAlignment="Center" 
-                   MouseLeftButtonDown="TextBlock_MouseLeftButtonDown">
-            <TextBlock.ToolTip>
-                <ToolTip>
-                    Нажмите, чтобы выйти
-                </ToolTip>
-            </TextBlock.ToolTip>
-            <TextBlock.Style>
-                <Style TargetType="TextBlock" BasedOn="{StaticResource CreateTBlock}">
-                    <Setter Property="Foreground" Value="#00cc66"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground" Value="#00994D"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBlock.Style>
-        </TextBlock>
-        
-        <!--Меню-->
-        <ListView x:Name="MenuList" Style="{DynamicResource MenuLV}" Grid.Row="1" Margin="0 10 0 0" Grid.Column="1" FontWeight="Normal">
-            <ListViewItem MouseLeftButtonUp="ListViewItem_MouseLeftButtonUp">Создание</ListViewItem>
-            <ListViewItem MouseLeftButtonUp="ListViewItem_MouseLeftButtonUp">Печать</ListViewItem>
-            <ListViewItem MouseLeftButtonUp="ListViewItem_MouseLeftButtonUp">Список</ListViewItem>
-            <ListViewItem MouseLeftButtonUp="ListViewItem_MouseLeftButtonUp">Настройки</ListViewItem>
-            <ListViewItem MouseLeftButtonUp="ListViewItem_MouseLeftButtonUp">Импорт/экспорт</ListViewItem>
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="ListViewItem">
-                                <Grid Name="RootPanel" Background="Transparent" Height="48">
-                                    <Rectangle Name="SelectedBorder" Width="3" Fill="#00ff80"
-                                       HorizontalAlignment="Left" Visibility="Collapsed" />
-                                    <ContentPresenter Margin="10 0 0 0" VerticalAlignment="Center"/>
-                                </Grid>
-                                <ControlTemplate.Triggers>
-                                    <Trigger Property="IsSelected" Value="True">
-                                        <Setter TargetName="SelectedBorder" Property="Visibility" Value="Visible" />
-                                        <Setter Property="Background" TargetName="RootPanel" Value="#99fdc9"/>
-                                    </Trigger>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" TargetName="RootPanel" Value="#00cc66"/>
-                                        <Setter Property="Foreground" Value="#33fe98" />
-                                        <Setter Property="Cursor" TargetName="RootPanel" Value="Hand"/>
-                                    </Trigger>
-                                </ControlTemplate.Triggers>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </ListView.ItemContainerStyle>
-        </ListView>
     </Grid>
 </Window>

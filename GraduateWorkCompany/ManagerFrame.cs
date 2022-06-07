@@ -9,6 +9,7 @@ namespace GraduateWorkCompany
 {
     public class ManagerFrame
     {
-        public static Frame frame;
+        public static Frame Frame;
+        public static Frame MenuFrame;
     }
 }

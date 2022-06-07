@@ -10,9 +10,11 @@ namespace  GraduateWorkCompany.Data.Models
     public class Client : BaseEntity
     {
         [Required]
+        [MaxLength(255)]
         public string Login { get; set; }
 
         [Required]
+        [MaxLength(255)]
         public string Password { get; set; }
 
         [Required]
@@ -44,6 +46,8 @@ namespace  GraduateWorkCompany.Data.Models
         [Required]
         [Display(Name = "Время создания")]
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+        public IEnumerable<Appointment> Appointments { get; set; }
     }
 
     public enum Gender

@@ -8,7 +8,6 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/DictionaryButtons.xaml"/>
                 <ResourceDictionary Source="Styles/DictionaryListViews.xaml"/>
-                <ResourceDictionary Source="Styles/DictionaryTextBlocks.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
