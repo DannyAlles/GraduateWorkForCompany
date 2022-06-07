@@ -1,8 +1,10 @@
 ﻿using GraduateWorkCompany.Data;
 using GraduateWorkCompany.Data.Models;
 using GraduateWorkCompany.Properties;
+using GraduateWorkCompany.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +28,7 @@ namespace GraduateWorkCompany.Pages
         MedContext context;
         Doctor NewDoctor = new Doctor();
         Doctor SelectedDoctor = new Doctor();
+        List<CabViewModel> Cabs = new List<CabViewModel>();
 
         public DoctorListPage()
         {
@@ -34,11 +37,18 @@ namespace GraduateWorkCompany.Pages
             GetDoctors();
             NewDoctor = new Doctor();
             NewDoctorGrid.DataContext = NewDoctor;
+            Cabs = context.Cabs.OrderBy(x => x.Number).Select(x => new CabViewModel()
+            {
+                CabId = x.Id,
+                CabTitle = x.Number + " - " + x.Description
+            }).ToList();
+            CabsCB.ItemsSource = Cabs;
+            UpdatedCabsCB.ItemsSource = Cabs;
         }
 
         private void GetDoctors()
         {
-            DoctorDG.ItemsSource = context.Doctors.ToList();
+            DoctorDG.ItemsSource = context.Doctors.Include(x => x.Cab).ToList();
         }
 
         private void AddItem(object s, RoutedEventArgs e)

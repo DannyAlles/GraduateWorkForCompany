@@ -101,6 +101,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Migrations\202206071823052_AppointmentUpdated.cs" />
+    <Compile Include="Migrations\202206071823052_AppointmentUpdated.designer.cs">
+      <DependentUpon>202206071823052_AppointmentUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206071915274_UpdatedDoctor.cs" />
+    <Compile Include="Migrations\202206071915274_UpdatedDoctor.designer.cs">
+      <DependentUpon>202206071915274_UpdatedDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MakeAnAppointmentPage.xaml.cs">
+      <DependentUpon>MakeAnAppointmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\CabViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -151,6 +163,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\EditClientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MakeAnAppointmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -273,6 +289,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206071400519_FixedCab.resx">
       <DependentUpon>202206071400519_FixedCab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206071823052_AppointmentUpdated.resx">
+      <DependentUpon>202206071823052_AppointmentUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206071915274_UpdatedDoctor.resx">
+      <DependentUpon>202206071915274_UpdatedDoctor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -74,7 +74,7 @@
                         <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Description}"/>
 
                         <Button Grid.Row="4" Grid.ColumnSpan="2" Width="150" Content="Добавить" Margin="5" Click="AddItem"
-                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource StyleDoneBT}"/>
                     </Grid>
 
                 </StackPanel>
@@ -108,7 +108,7 @@
 
                         <Button Grid.Row="4" Grid.ColumnSpan="2" Width="150" Click="UpdateItem"
                                 Content="Изменить" Margin="5"
-                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource StyleDoneBT}"/>
                     </Grid>
 
                 </StackPanel>

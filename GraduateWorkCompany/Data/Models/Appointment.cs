@@ -27,26 +27,5 @@ namespace GraduateWorkCompany.Data.Models
 
         [Required]
         public DateTime StartsAt { get; set; }
-
-        [Required]
-        public DateTime EndsAt { get; set; }
-
-        public Type Type { get; set; }
-
-        public Status Status { get; set; } = Status.Awaiting;
-    }
-
-    public enum Type
-    {
-        Visit,
-        Custom
-    }
-
-    public enum Status
-    {
-        Awaiting,
-        Done,
-        Denied,
-        Allowed,
     }
 }

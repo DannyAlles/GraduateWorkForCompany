@@ -74,3 +74,7 @@ D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\o
 D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\EditClientPage.baml
 D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\RegistryEditPage.g.cs
 D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\RegistryEditPage.baml
+D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\MakeAnAppointmentPage.g.cs
+D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\MakeAnAppointmentPage.baml
+D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\GraduateWorkCompany.Migrations.AppointmentUpdated.resources
+D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\GraduateWorkCompany.Migrations.UpdatedDoctor.resources

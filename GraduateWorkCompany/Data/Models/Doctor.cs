@@ -27,6 +27,10 @@ namespace GraduateWorkCompany.Data.Models
         public Guid CreataedById { get; set; }
         public Registry CreataedBy { get; set; }
 
+        [Required]
+        public Guid CabId { get; set; }
+        public Cab Cab { get; set; }
+
         public IEnumerable<Appointment> Appointments { get; set; }
         public IEnumerable<Cab> Cabs { get; set; }
         public IEnumerable<DoctorTimetable> DoctorTimetables { get; set; }

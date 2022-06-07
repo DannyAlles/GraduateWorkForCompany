@@ -22,13 +22,13 @@ namespace GraduateWorkCompany.Pages
     /// </summary>
     public partial class CarListPage : Page
     {
-        MedContext context;
+        MedContext _context;
         Cab NewCab = new Cab();
         Cab SelectedCab = new Cab();
 
         public CarListPage()
         {
-            this.context = new MedContext();
+            this._context = new MedContext();
             InitializeComponent();
             GetCabs();
             NewCab = new Cab();
@@ -37,14 +37,14 @@ namespace GraduateWorkCompany.Pages
 
         private void GetCabs()
         {
-            CabDG.ItemsSource = context.Cabs.ToList();
+            CabDG.ItemsSource = _context.Cabs.ToList();
         }
 
         private void AddItem(object s, RoutedEventArgs e)
         {
             NewCab.Id = Guid.NewGuid();
-            context.Cabs.Add(NewCab);
-            context.SaveChanges();
+            _context.Cabs.Add(NewCab);
+            _context.SaveChanges();
             GetCabs();
             NewCab = new Cab();
             NewCabGrid.DataContext = NewCab;
@@ -52,7 +52,7 @@ namespace GraduateWorkCompany.Pages
 
         private void UpdateItem(object s, RoutedEventArgs e)
         {
-            context.SaveChanges();
+            _context.SaveChanges();
             GetCabs();
         }
 
@@ -65,8 +65,8 @@ namespace GraduateWorkCompany.Pages
         private void DeleteCab(object s, RoutedEventArgs e)
         {
             var productToDelete = (s as FrameworkElement).DataContext as Cab;
-            context.Cabs.Remove(productToDelete);
-            context.SaveChanges();
+            _context.Cabs.Remove(productToDelete);
+            _context.SaveChanges();
             GetCabs();
         }
     }

@@ -3,7 +3,6 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:GraduateWorkCompany.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="DoctorListPage">
@@ -22,6 +21,7 @@
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Ф.И.О" Binding="{Binding FIO}"/>
                 <DataGridTextColumn Header="Должность" Binding="{Binding Post}"/>
+                <DataGridTextColumn Header="Кабинет" Binding="{Binding Cab.Number}"/>
                 <DataGridTextColumn Header="Доступен" Binding="{Binding IsAvailable}"/>
 
                 <DataGridTemplateColumn Header="Изменить врача">
@@ -75,10 +75,17 @@
                         <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Post}"/>
 
                         <Label Grid.Row="2" Grid.Column="0" Content="Доступен"/>
-                        <CheckBox Grid.Row="2" VerticalAlignment="Center" Grid.Column="2" IsChecked="{Binding IsAvailable}"/>
+                        <CheckBox Grid.Row="2" VerticalAlignment="Center" Grid.Column="2" 
+                                  IsChecked="{Binding IsAvailable}"/>
+
+                        <Label Grid.Row="3" Grid.Column="0" Content="Кабинет"/>
+                        <ComboBox Grid.Row="3" Grid.Column="2"  x:Name="CabsCB"
+                                  SelectedValue="{Binding CabId}"
+                                  DisplayMemberPath="CabTitle" 
+                                  SelectedValuePath="CabId"/>
 
                         <Button Grid.Row="4" Grid.ColumnSpan="2" Width="150" Content="Добавить" Margin="5" Click="AddItem"
-                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource StyleDoneBT}"/>
                     </Grid>
 
                 </StackPanel>
@@ -113,9 +120,15 @@
                         <Label Grid.Row="2" Grid.Column="0" Content="Доступен"/>
                         <CheckBox Grid.Row="2" VerticalAlignment="Center" Grid.Column="2" IsChecked="{Binding IsAvailable}"/>
 
+                        <Label Grid.Row="3" Grid.Column="0" Content="Кабинет"/>
+                        <ComboBox Grid.Row="3" Grid.Column="2" x:Name="UpdatedCabsCB"
+                                  SelectedValue="{Binding CabId}"
+                                  DisplayMemberPath="CabTitle" 
+                                  SelectedValuePath="CabId"/>
+
                         <Button Grid.Row="4" Grid.ColumnSpan="2" Width="150" Click="UpdateItem"
                                 Content="Изменить" Margin="5"
-                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource StyleDoneBT}"/>
                     </Grid>
 
                 </StackPanel>

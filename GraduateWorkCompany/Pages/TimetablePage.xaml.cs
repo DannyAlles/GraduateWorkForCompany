@@ -1,4 +1,7 @@
-﻿using System;
+﻿using GraduateWorkCompany.Data;
+using GraduateWorkCompany.Properties;
+using GraduateWorkCompany.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +23,17 @@ namespace GraduateWorkCompany.Pages
     /// </summary>
     public partial class TimetablePage : Page
     {
+        MedContext _context;
+
         public TimetablePage()
         {
             InitializeComponent();
+            this._context = new MedContext();
+        }
+
+        private void MakeAnAppointmentBT_Click(object sender, RoutedEventArgs e)
+        {
+            ManagerFrame.Frame.Navigate(new MakeAnAppointmentPage());
         }
     }
 }
