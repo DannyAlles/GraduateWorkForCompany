@@ -62,3 +62,6 @@ D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\o
 D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\GraduateWorkCompany.Migrations.AddedRegistry.resources
 D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\RegistryRegistrationPage.g.cs
 D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\RegistryRegistrationPage.baml
+D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\RegistryAccountPage.g.cs
+D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\RegistryAccountPage.baml
+D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\GraduateWorkCompany.Migrations.UpdatedClient.resources

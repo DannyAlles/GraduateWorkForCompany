@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\App.xaml
-101336276720
+11-1616384247
 
-38-1667775561
+41-445347841
 133223349993
-MainWindow.xaml;Pages\AuthorizationPage.xaml;Pages\ClientAccountPage.xaml;Pages\ClientMenuPage.xaml;Pages\RegistrationPage.xaml;Pages\RegistryMenuPage.xaml;Pages\RegistryRegistrationPage.xaml;Pages\TimetablePage.xaml;Styles\DictionaryButtons.xaml;Styles\DictionaryListViews.xaml;
+MainWindow.xaml;Pages\AuthorizationPage.xaml;Pages\ClientAccountPage.xaml;Pages\ClientMenuPage.xaml;Pages\RegistrationPage.xaml;Pages\RegistryAccountPage.xaml;Pages\RegistryMenuPage.xaml;Pages\RegistryRegistrationPage.xaml;Pages\TimetablePage.xaml;Styles\DictionaryButtons.xaml;Styles\DictionaryListViews.xaml;
 
-True
+False
 

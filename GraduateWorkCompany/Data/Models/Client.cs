@@ -38,6 +38,10 @@ namespace  GraduateWorkCompany.Data.Models
         public string Number { get; set; }
 
         [Required]
+        [MaxLength(255)]
+        public string OMS { get; set; }
+
+        [Required]
         public DateTime BirthAt { get; set; }
 
         [Required]

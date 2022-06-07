@@ -20,18 +20,18 @@ namespace GraduateWorkCompany.Domain.Services
             _hashService = new HashSevice();
         }
 
-        public async Task<Client> GetClientById(Guid id)
+        public Client GetClientById(Guid id)
         {
-            return await _clientRepository.GetClilentById(id).ConfigureAwait(false);
+            return _clientRepository.GetClilentById(id);
         }
 
-        public async Task CreateClient(Client client, string rePassword, string password)
+        public void CreateClient(Client client, string rePassword, string password)
         {
             if (password != rePassword) throw new PasswordNotEqualException();
             if (password == null || rePassword == null) throw new PasswordIsEmptyException();
-            var existclient = await _clientRepository.GetClientByLogin(client.Login).ConfigureAwait(false);
+            var existclient = _clientRepository.GetClientByLogin(client.Login);
             if (existclient != null) throw new LoginIsAlreadyExistsException();
-            existclient = await _clientRepository.GetClientByPhone(client.Phone).ConfigureAwait(false);
+            existclient = _clientRepository.GetClientByPhone(client.Phone);
             if (existclient != null) throw new PhoneIsAlreadyExistsException();
 
             client.Id = Guid.NewGuid();
@@ -40,10 +40,10 @@ namespace GraduateWorkCompany.Domain.Services
             {
                 client.Password = _hashService.GetHash(sha256Hash, password);
             }
-            await _clientRepository.CreateClient(client).ConfigureAwait(false);
+            _clientRepository.CreateClient(client);
         }
 
-        public async Task Authorize(Client client, string password)
+        public void Authorize(Client client, string password)
         {
             using (SHA256 sha256Hash = SHA256.Create())
             {
@@ -56,9 +56,9 @@ namespace GraduateWorkCompany.Domain.Services
             }
         }
 
-        public async Task<Client> GetClientByLogin(string login)
+        public Client GetClientByLogin(string login)
         {
-            return await _clientRepository.GetClientByLogin(login).ConfigureAwait(false);
+            return _clientRepository.GetClientByLogin(login);
         }
     }
 }

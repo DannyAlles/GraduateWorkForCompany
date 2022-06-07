@@ -22,13 +22,13 @@ namespace GraduateWorkCompany.Domain.Services
             _hashService = new HashSevice();
         }
 
-        public async Task CreateRegistry(Registry registry, string password, string rePassword)
+        public void CreateRegistry(Registry registry, string password, string rePassword)
         {
             if (password != rePassword) throw new PasswordNotEqualException();
             if (password == null || rePassword == null) throw new PasswordIsEmptyException();
-            var existregistry = await _registryRepository.GetRegistryByLogin(registry.Login).ConfigureAwait(false);
+            var existregistry = _registryRepository.GetRegistryByLogin(registry.Login);
             if (existregistry != null) throw new LoginIsAlreadyExistsException();
-            existregistry = await _registryRepository.GetRegistryByPhone(registry.Phone).ConfigureAwait(false);
+            existregistry = _registryRepository.GetRegistryByPhone(registry.Phone);
             if (existregistry != null) throw new PhoneIsAlreadyExistsException();
 
             registry.Id = Guid.NewGuid();
@@ -36,10 +36,10 @@ namespace GraduateWorkCompany.Domain.Services
             {
                 registry.Password = _hashService.GetHash(sha256Hash, password);
             }
-            await _registryRepository.CreateRegistry(registry).ConfigureAwait(false);
+            _registryRepository.CreateRegistry(registry);
         }
 
-        public async Task Authorize(Registry registry, string password)
+        public void Authorize(Registry registry, string password)
         {
             using (SHA256 sha256Hash = SHA256.Create())
             {
@@ -52,6 +52,7 @@ namespace GraduateWorkCompany.Domain.Services
             }
         }
 
-        public async Task<Registry> GetRegistryByLogin(string login) => await _registryRepository.GetRegistryByLogin(login).ConfigureAwait(false);
+        public Registry GetRegistryByLogin(string login) => _registryRepository.GetRegistryByLogin(login);
+        public Registry GetRegistryById(Guid id) => _registryRepository.GetRegistryById(id);
     }
 }

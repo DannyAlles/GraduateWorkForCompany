@@ -24,5 +24,10 @@ namespace GraduateWorkCompany.Pages
         {
             InitializeComponent();
         }
+
+        private void AccountBT_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            ManagerFrame.Frame.Navigate(new RegistryAccountPage());
+        }
     }
 }

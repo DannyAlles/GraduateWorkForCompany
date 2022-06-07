@@ -146,6 +146,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\RegistryAccountPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\RegistryMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -181,6 +185,10 @@
     <Compile Include="Migrations\202206071021240_AddedRegistry.designer.cs">
       <DependentUpon>202206071021240_AddedRegistry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206071157039_UpdatedClient.cs" />
+    <Compile Include="Migrations\202206071157039_UpdatedClient.designer.cs">
+      <DependentUpon>202206071157039_UpdatedClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Pages\AuthorizationPage.xaml.cs">
       <DependentUpon>AuthorizationPage.xaml</DependentUpon>
@@ -193,6 +201,9 @@
     </Compile>
     <Compile Include="Pages\RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegistryAccountPage.xaml.cs">
+      <DependentUpon>RegistryAccountPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegistryMenuPage.xaml.cs">
       <DependentUpon>RegistryMenuPage.xaml</DependentUpon>
@@ -224,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206071021240_AddedRegistry.resx">
       <DependentUpon>202206071021240_AddedRegistry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206071157039_UpdatedClient.resx">
+      <DependentUpon>202206071157039_UpdatedClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

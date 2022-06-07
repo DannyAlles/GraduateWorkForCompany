@@ -10,27 +10,35 @@ namespace GraduateWorkCompany.Data.Repositories
 {
     public class RegistryRepository
     {
-        public async Task<Registry> GetRegistryByLogin(string login)
+        public Registry GetRegistryByLogin(string login)
         {
             using (var _context = new MedContext())
             {
-                return await _context.Registries.FirstOrDefaultAsync(x => x.Login.ToLower() == login.ToLower()).ConfigureAwait(false);
+                return _context.Registries.FirstOrDefault(x => x.Login.ToLower() == login.ToLower());
             }
         }
-        public async Task<Registry> GetRegistryByPhone(string phone)
+        public Registry GetRegistryByPhone(string phone)
         {
             using (var _context = new MedContext())
             {
-                return await _context.Registries.FirstOrDefaultAsync(x => x.Phone == phone).ConfigureAwait(false);
+                return _context.Registries.FirstOrDefault(x => x.Phone == phone);
             }
         }
 
-        public async Task CreateRegistry(Registry registry)
+        public void CreateRegistry(Registry registry)
         {
             using (var _context = new MedContext())
             {
                 _context.Registries.Add(registry);
-                await _context.SaveChangesAsync().ConfigureAwait(false);
+                _context.SaveChanges();
+            }
+        }
+
+        public Registry GetRegistryById(Guid id)
+        {
+            using (var _context = new MedContext())
+            {
+                return _context.Registries.FirstOrDefault(x => x.Id == id);
             }
         }
     }

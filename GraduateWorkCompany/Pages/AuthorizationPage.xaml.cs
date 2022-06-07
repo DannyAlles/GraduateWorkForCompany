@@ -34,18 +34,18 @@ namespace GraduateWorkCompany.Pages
             _registryService = new RegistryService();
         }
 
-        private async void AuthoriBT_Click(object sender, RoutedEventArgs e)
+        private void AuthoriBT_Click(object sender, RoutedEventArgs e)
         {
 
             try
             {
                 if (!IsRegistry)
                 {
-                    var client = await _clientService.GetClientByLogin(LoginTB.Text).ConfigureAwait(false);
+                    var client = _clientService.GetClientByLogin(LoginTB.Text);
 
                     if (client != null)
                     {
-                        await _clientService.Authorize(client, PasswordTB.Password).ConfigureAwait(false);
+                        _clientService.Authorize(client, PasswordTB.Password);
 
                         Application.Current.Dispatcher.Invoke(() =>
                         {
@@ -57,17 +57,14 @@ namespace GraduateWorkCompany.Pages
                 }
                 else
                 {
-                    var registry = await _registryService.GetRegistryByLogin(LoginTB.Text).ConfigureAwait(false);
+                    var registry = _registryService.GetRegistryByLogin(LoginTB.Text);
 
-                    if(registry != null)
+                    if (registry != null)
                     {
-                        await _registryService.Authorize(registry, PasswordTB.Password).ConfigureAwait(false);
+                        _registryService.Authorize(registry, PasswordTB.Password);
 
-                        Application.Current.Dispatcher.Invoke(() =>
-                        {
-                            ManagerFrame.Frame.Navigate(new TimetablePage());
-                            ManagerFrame.MenuFrame.Navigate(new RegistryMenuPage());
-                        });
+                        ManagerFrame.Frame.Navigate(new TimetablePage());
+                        ManagerFrame.MenuFrame.Navigate(new RegistryMenuPage());
                     }
                     else MessageBox.Show("Пользователь не найден", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Error);
                 }

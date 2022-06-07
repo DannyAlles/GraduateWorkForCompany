@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Linq;
 using System.Threading.Tasks;
 using GraduateWorkCompany.Data.Models;
 
@@ -7,37 +8,37 @@ namespace GraduateWorkCompany.Data.Repositories
 {
     public class ClientRepository
     {
-        public async Task<Client> GetClilentById(Guid id)
+        public Client GetClilentById(Guid id)
         {
             using (var _context = new MedContext())
             {
-                return await _context.Clients.FirstOrDefaultAsync(x => x.Id == id).ConfigureAwait(false);
+                return _context.Clients.FirstOrDefault(x => x.Id == id);
             }
         }
 
-        public async Task<Client> CreateClient(Client client)
+        public Client CreateClient(Client client)
         {
             using (var _context = new MedContext())
             {
                 _context.Clients.Add(client);
-                await _context.SaveChangesAsync().ConfigureAwait(false);
+                _context.SaveChanges();
                 return client;
             }
         }
 
-        public async Task<Client> GetClientByLogin(string login)
+        public Client GetClientByLogin(string login)
         {
             using (var _context = new MedContext())
             {
-                return await _context.Clients.FirstOrDefaultAsync(x => x.Login.ToLower() == login.ToLower()).ConfigureAwait(false);
+                return _context.Clients.FirstOrDefault(x => x.Login.ToLower() == login.ToLower());
             }
         }
 
-        public async Task<Client> GetClientByPhone(string phone)
+        public Client GetClientByPhone(string phone)
         {
             using (var _context = new MedContext())
             {
-                return await _context.Clients.FirstOrDefaultAsync(x => x.Phone == phone).ConfigureAwait(false);
+                return _context.Clients.FirstOrDefault(x => x.Phone == phone);
             }
         }
     }

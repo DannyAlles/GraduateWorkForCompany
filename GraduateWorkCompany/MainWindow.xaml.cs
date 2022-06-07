@@ -22,7 +22,8 @@ namespace GraduateWorkCompany
             else
             {
                 ManagerFrame.Frame.Navigate(new TimetablePage());
-                ManagerFrame.MenuFrame.Navigate(new ClientMenuPage());
+                if (Settings.Default.IsRegistry) ManagerFrame.MenuFrame.Navigate(new RegistryMenuPage());
+                else ManagerFrame.MenuFrame.Navigate(new ClientMenuPage());
             }
         }
     }

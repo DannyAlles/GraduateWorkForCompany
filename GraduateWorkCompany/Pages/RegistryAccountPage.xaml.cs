@@ -19,26 +19,23 @@ using System.Windows.Shapes;
 namespace GraduateWorkCompany.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для ClientAccountPage.xaml
+    /// Логика взаимодействия для RegistryAccountPage.xaml
     /// </summary>
-    public partial class ClientAccountPage : Page
+    public partial class RegistryAccountPage : Page
     {
-        private readonly ClientService _clientService;
+        private readonly RegistryService _registryService;
+        public Task Initialization { get; private set; }
 
-        public ClientAccountPage()
+        public RegistryAccountPage()
         {
             InitializeComponent();
-            _clientService = new ClientService();
-            var client = _clientService.GetClientById(Settings.Default.ClientId);
+            _registryService = new RegistryService();
 
-            FIO.Text = client.FIO;
-            Login.Text = client.Login;
-            OMS.Text = client.OMS;
-            BirthDate.Text = client.BirthAt.ToShortDateString();
-            Gender.Text = client.Gender == Data.Models.Gender.Male ? "Мужской" : "Женский";
-            Seria.Text = client.Seria;
-            Number.Text = client.Number;
-            Phone.Text = client.Phone;
+            var registry = _registryService.GetRegistryById(Settings.Default.ClientId);
+
+            FIO.Text = registry.FIO;
+            Login.Text = registry.Login;
+            Phone.Text = registry.Phone;
         }
 
         private void LogoutBT_Click(object sender, RoutedEventArgs e)

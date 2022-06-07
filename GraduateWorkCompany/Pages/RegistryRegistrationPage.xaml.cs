@@ -42,11 +42,8 @@ namespace GraduateWorkCompany.Pages
                     Phone = PhoneTB.Text
                 };
 
-                await _registryService.CreateRegistry(registry, PasswordTB.Password, RePasswordTB.Password).ConfigureAwait(false);
-                Application.Current.Dispatcher.Invoke(() =>
-                {
-                    ManagerFrame.Frame.Navigate(new AuthorizationPage());
-                });
+                _registryService.CreateRegistry(registry, PasswordTB.Password, RePasswordTB.Password);
+                ManagerFrame.Frame.Navigate(new AuthorizationPage());
             }
             catch (PasswordNotEqualException)
             {

@@ -34,14 +34,12 @@ namespace GraduateWorkCompany.Pages
                     Gender = FemRB.IsChecked.Value ? Gender.Female : Gender.Male,
                     BirthAt = BirthDP.SelectedDate.Value,
                     CreatedAt = DateTime.UtcNow,
+                    OMS = OMSTB.Text
                 };
 
-                await _clientService.CreateClient(client, RePasswordTB.Password, PasswordTB.Password).ConfigureAwait(false);
+                _clientService.CreateClient(client, RePasswordTB.Password, PasswordTB.Password);
 
-                Application.Current.Dispatcher.Invoke(() =>
-                {
-                    ManagerFrame.Frame.Navigate(new AuthorizationPage());
-                });
+                ManagerFrame.Frame.Navigate(new AuthorizationPage());
             }
             catch (PasswordNotEqualException)
             {
