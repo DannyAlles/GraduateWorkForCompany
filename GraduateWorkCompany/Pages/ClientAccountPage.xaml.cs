@@ -55,5 +55,10 @@ namespace GraduateWorkCompany.Pages
                 }
             }
         }
+
+        private void ChangeBT_Click(object sender, RoutedEventArgs e)
+        {
+            ManagerFrame.Frame.Navigate(new EditClientPage());
+        }
     }
 }
