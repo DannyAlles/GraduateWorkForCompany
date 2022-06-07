@@ -68,3 +68,5 @@ D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\o
 D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\GraduateWorkCompany.Migrations.FixedCab.resources
 D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\CabListPage.g.cs
 D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\CabListPage.baml
+D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\DoctorListPage.g.cs
+D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\DoctorListPage.baml

@@ -34,5 +34,10 @@ namespace GraduateWorkCompany.Pages
         {
             ManagerFrame.Frame.Navigate(new CarListPage());
         }
+
+        private void DoctorBT_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            ManagerFrame.Frame.Navigate(new DoctorListPage());
+        }
     }
 }
