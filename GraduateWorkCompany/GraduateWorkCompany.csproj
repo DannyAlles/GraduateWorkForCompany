@@ -154,15 +154,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\EditRegistryPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\RegistrationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\RegistryAccountPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RegistryEditPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -228,14 +228,14 @@
     <Compile Include="Pages\EditClientPage.xaml.cs">
       <DependentUpon>EditClientPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\EditRegistryPage.xaml.cs">
-      <DependentUpon>EditRegistryPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegistryAccountPage.xaml.cs">
       <DependentUpon>RegistryAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegistryEditPage.xaml.cs">
+      <DependentUpon>RegistryEditPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegistryMenuPage.xaml.cs">
       <DependentUpon>RegistryMenuPage.xaml</DependentUpon>

@@ -71,6 +71,6 @@ D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\o
 D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\DoctorListPage.g.cs
 D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\DoctorListPage.baml
 D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\EditClientPage.g.cs
-D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\EditRegistryPage.g.cs
 D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\EditClientPage.baml
-D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\EditRegistryPage.baml
+D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\RegistryEditPage.g.cs
+D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\RegistryEditPage.baml
