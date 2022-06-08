@@ -9,6 +9,21 @@
       Title="RegistryTimetablePage">
 
     <Grid x:Name="MainGrid">
-        <DataGrid x:Name="TimeDataGrid" IsReadOnly="True" CanUserSortColumns="False"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <DatePicker x:Name="DateP" Grid.Column="1" SelectedDateChanged="DateP_SelectedDateChanged"/>
+        </Grid>
+
+        <DataGrid x:Name="TimeDataGrid" Grid.Row="1" IsReadOnly="True" CanUserSortColumns="False" ItemsSource="{Binding}" />
     </Grid>
 </Page>

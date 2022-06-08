@@ -46,6 +46,7 @@ namespace GraduateWorkCompany.Pages
 
         private void GenerateTime()
         {
+            TimeStack.Children.Clear();
             var doctorId = Guid.Parse(Doctors.SelectedValue.ToString());
             var date = Date.SelectedDate.Value.Date;
             var appointments = _medContext.Appointments
