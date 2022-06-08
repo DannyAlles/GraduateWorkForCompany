@@ -9,6 +9,25 @@
       Title="MakeAnAppointmentPage">
 
     <Grid>
-        
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
+                <TextBlock Text="Врач:" HorizontalAlignment="Right" FontSize="15" Margin="0 10 0 0"/>
+                <TextBlock Text="Дата:" HorizontalAlignment="Right" FontSize="15" Margin="0 15 0 0"/>
+                <TextBlock Text="Время:" HorizontalAlignment="Right" FontSize="15" Margin="0 10 0 0"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Vertical" Margin="10 0 0 0" Width="250">
+                <ComboBox Text="Врач:" Margin="0 10 0 0" Name="Doctors"
+                          SelectedValue="{Binding Id}"
+                          DisplayMemberPath="FIO" 
+                          SelectedValuePath="Id"
+                          SelectionChanged="Doctors_SelectionChanged"/>
+                <DatePicker Text="Дата:" Margin="0 12 0 0" Name="Date" SelectedDateChanged="DatePicker_SelectedDateChanged"/>
+                <StackPanel x:Name="TimeStack" Margin="0 10 0 0" Orientation="Vertical"></StackPanel>
+                <Button Style="{StaticResource StyleDoneBT}" Content="Записаться" 
+                        x:Name="MakeAnAppointmentBT" Click="MakeAnAppointmentBT_Click"
+                        Margin="0 25 0 0"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
