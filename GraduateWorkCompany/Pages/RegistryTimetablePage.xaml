@@ -9,6 +9,6 @@
       Title="RegistryTimetablePage">
 
     <Grid x:Name="MainGrid">
-        <DataGrid ItemsSource="{Binding DTable,Mode=TwoWay}"/>
+        <DataGrid x:Name="TimeDataGrid" IsReadOnly="True" CanUserSortColumns="False"/>
     </Grid>
 </Page>

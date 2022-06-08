@@ -22,7 +22,6 @@ namespace GraduateWorkCompany.Pages
     /// </summary>
     public partial class RegistryTimetablePage : Page
     {
-        private DataTable DTable = new DataTable();
         private MedContext medContext;
 
         public RegistryTimetablePage()
@@ -30,9 +29,24 @@ namespace GraduateWorkCompany.Pages
             InitializeComponent();
             medContext = new MedContext();
 
+            TimeDataGrid.Columns.Add(new DataGridTextColumn
+            {
+                Header = "Время"
+            });
+
             foreach (var item in medContext.Doctors.Select(x => x.FIO).ToList())
             {
-                DTable.Columns.Add(item);
+                TimeDataGrid.Columns.Add(new DataGridTextColumn
+                {
+                    Header = item
+                });
+            }
+
+            for (int i = 8; i <= 15; i++)
+            {
+                for (int j = 0; j <= 45; j += 15)
+                {
+                }
             }
         }
     }

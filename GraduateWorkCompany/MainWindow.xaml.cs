@@ -21,9 +21,16 @@ namespace GraduateWorkCompany
                 ManagerFrame.Frame.Navigate(new AuthorizationPage());
             else
             {
-                ManagerFrame.Frame.Navigate(new TimetablePage());
-                if (Settings.Default.IsRegistry) ManagerFrame.MenuFrame.Navigate(new RegistryMenuPage());
-                else ManagerFrame.MenuFrame.Navigate(new ClientMenuPage());
+                if (Settings.Default.IsRegistry)
+                {
+                    ManagerFrame.Frame.Navigate(new RegistryTimetablePage());
+                    ManagerFrame.MenuFrame.Navigate(new RegistryMenuPage());
+                }
+                else
+                {
+                    ManagerFrame.Frame.Navigate(new TimetablePage());
+                    ManagerFrame.MenuFrame.Navigate(new ClientMenuPage());
+                }
             }
         }
     }
