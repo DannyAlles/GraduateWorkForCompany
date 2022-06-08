@@ -6,7 +6,7 @@
         xmlns:p="clr-namespace:GraduateWorkCompany.Properties"
         xmlns:local="clr-namespace:GraduateWorkCompany"
         mc:Ignorable="d"
-        Title="MedCompany" Height="450" Width="800">
+        Title="MedCompany" Height="700" Width="850">
     <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="6"/>

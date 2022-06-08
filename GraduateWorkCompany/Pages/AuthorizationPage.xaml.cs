@@ -63,7 +63,7 @@ namespace GraduateWorkCompany.Pages
                     {
                         _registryService.Authorize(registry, PasswordTB.Password);
 
-                        ManagerFrame.Frame.Navigate(new TimetablePage());
+                        ManagerFrame.Frame.Navigate(new RegistryTimetablePage());
                         ManagerFrame.MenuFrame.Navigate(new RegistryMenuPage());
                     }
                     else MessageBox.Show("Пользователь не найден", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Error);
