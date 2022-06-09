@@ -12,7 +12,7 @@
         <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal" >
                 <StackPanel Orientation="Vertical">
-                    <TextBlock Text="Ф.И.О:" HorizontalAlignment="Right" FontSize="15" Margin="0 10 10 0" Foreground="Black"/>
+                    <TextBlock Text="Ф.И.О:" HorizontalAlignment="Right" FontSize="15" Margin="0 26 10 0" Foreground="Black"/>
                     <TextBlock Text="Телефон:" HorizontalAlignment="Right" FontSize="15" Margin="0 10 10 0" Foreground="Black"/>
                     <TextBlock Text="Логин:" HorizontalAlignment="Right" Margin="0 10 10 0" FontSize="15" Foreground="Black"/>
                     <TextBlock Text="Пароль:" HorizontalAlignment="Right" FontSize="15" Margin="0 10 10 0" Foreground="Black"/>
@@ -21,6 +21,7 @@
 
 
                 <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Формат номера: 79999999999" HorizontalAlignment="Right" Foreground="IndianRed" FontSize="12"/>
                     <TextBox x:Name="FIOTB" Width="200" Margin="0 12 0 0"/>
                     <TextBox x:Name="PhoneTB" Width="200" Margin="0 12 0 0"/>
                     <TextBox x:Name="LoginTB" Width="200" Margin="0 12 0 0"/>

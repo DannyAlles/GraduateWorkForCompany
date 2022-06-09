@@ -64,10 +64,13 @@ namespace GraduateWorkCompany.Pages
 
         private void DeleteCab(object s, RoutedEventArgs e)
         {
-            var productToDelete = (s as FrameworkElement).DataContext as Cab;
-            _context.Cabs.Remove(productToDelete);
-            _context.SaveChanges();
-            GetCabs();
+            if (MessageBoxResult.Yes == MessageBox.Show("Удалить кабинет?", "Кабинеты", MessageBoxButton.YesNo, MessageBoxImage.Question))
+            {
+                var productToDelete = (s as FrameworkElement).DataContext as Cab;
+                _context.Cabs.Remove(productToDelete);
+                _context.SaveChanges();
+                GetCabs();
+            }
         }
     }
 }

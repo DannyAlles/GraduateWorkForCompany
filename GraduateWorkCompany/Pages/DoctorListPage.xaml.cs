@@ -76,10 +76,13 @@ namespace GraduateWorkCompany.Pages
 
         private void DeleteDoctor(object s, RoutedEventArgs e)
         {
-            var productToDelete = (s as FrameworkElement).DataContext as Doctor;
-            context.Doctors.Remove(productToDelete);
-            context.SaveChanges();
-            GetDoctors();
+            if (MessageBoxResult.Yes == MessageBox.Show("Удалить кабинет?", "Кабинеты", MessageBoxButton.YesNo, MessageBoxImage.Question))
+            {
+                var productToDelete = (s as FrameworkElement).DataContext as Doctor;
+                context.Doctors.Remove(productToDelete);
+                context.SaveChanges();
+                GetDoctors();
+            }
         }
     }
 }
