@@ -22,9 +22,6 @@ namespace GraduateWorkCompany.Data.Models
         public Guid CabId { get; set; }
         public Cab Cab { get; set; }
 
-        [MaxLength(1000)]
-        public string Description { get; set; }
-
         [Required]
         public DateTime StartsAt { get; set; }
     }

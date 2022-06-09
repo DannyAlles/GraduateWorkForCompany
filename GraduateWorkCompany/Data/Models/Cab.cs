@@ -16,6 +16,5 @@ namespace GraduateWorkCompany.Data.Models
         public string Description { get; set; }
 
         public IEnumerable<Appointment> Appointments { get; set; }
-        public IEnumerable<DoctorTimetable> DoctorTimetables { get; set; }
     }
 }

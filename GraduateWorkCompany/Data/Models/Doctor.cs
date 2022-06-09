@@ -33,7 +33,6 @@ namespace GraduateWorkCompany.Data.Models
 
         public IEnumerable<Appointment> Appointments { get; set; }
         public IEnumerable<Cab> Cabs { get; set; }
-        public IEnumerable<DoctorTimetable> DoctorTimetables { get; set; }
 
     }
 }

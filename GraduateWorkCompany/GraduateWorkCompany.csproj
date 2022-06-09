@@ -109,6 +109,10 @@
     <Compile Include="Migrations\202206071915274_UpdatedDoctor.designer.cs">
       <DependentUpon>202206071915274_UpdatedDoctor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206090637175_RemovedDoctorTimetable.cs" />
+    <Compile Include="Migrations\202206090637175_RemovedDoctorTimetable.designer.cs">
+      <DependentUpon>202206090637175_RemovedDoctorTimetable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MakeAnAppointmentPage.xaml.cs">
       <DependentUpon>MakeAnAppointmentPage.xaml</DependentUpon>
     </Compile>
@@ -131,7 +135,6 @@
     <Compile Include="Data\Models\Cab.cs" />
     <Compile Include="Data\Models\Client.cs" />
     <Compile Include="Data\Models\Doctor.cs" />
-    <Compile Include="Data\Models\DoctorTimetable.cs" />
     <Compile Include="Data\Models\Registry.cs" />
     <Compile Include="Data\Repositories\ClientRepository.cs" />
     <Compile Include="Data\Repositories\RegistryRepository.cs" />
@@ -303,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206071915274_UpdatedDoctor.resx">
       <DependentUpon>202206071915274_UpdatedDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206090637175_RemovedDoctorTimetable.resx">
+      <DependentUpon>202206090637175_RemovedDoctorTimetable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
