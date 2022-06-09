@@ -54,7 +54,7 @@ namespace GraduateWorkCompany.Pages
                 for (int j = 0; j <= 45; j += 15)
                 {
                     string time = $"{i}:" + (j == 0 ? "00" : $"{j}");
-                    DataRow row = myTable.NewRow();
+                    myTable.NewRow();
 
                     List<string> strings = new List<string>();
                     strings.Add(time);

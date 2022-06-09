@@ -2,6 +2,7 @@
 using GraduateWorkCompany.Domain.Exception;
 using GraduateWorkCompany.Domain.Services;
 using System;
+using System.Data.Entity.Validation;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -60,6 +61,10 @@ namespace GraduateWorkCompany.Pages
             catch (PhoneIsAlreadyExistsException)
             {
                 MessageBox.Show("Телефон уже занят", "Регистрация", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (DbEntityValidationException)
+            {
+                MessageBox.Show("Неверный формат номера", "Регистрация", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

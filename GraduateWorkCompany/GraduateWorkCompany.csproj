@@ -116,6 +116,9 @@
     <Compile Include="Pages\MakeAnAppointmentPage.xaml.cs">
       <DependentUpon>MakeAnAppointmentPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\RegistryMakeAnAppointmentPage.xaml.cs">
+      <DependentUpon>RegistryMakeAnAppointmentPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\RegistryTimetablePage.xaml.cs">
       <DependentUpon>RegistryTimetablePage.xaml</DependentUpon>
     </Compile>
@@ -186,6 +189,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\RegistryEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RegistryMakeAnAppointmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

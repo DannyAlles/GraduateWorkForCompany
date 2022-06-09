@@ -81,3 +81,5 @@ D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\o
 D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\RegistryTimetablePage.g.cs
 D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\RegistryTimetablePage.baml
 D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\GraduateWorkCompany.Migrations.RemovedDoctorTimetable.resources
+D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\RegistryMakeAnAppointmentPage.g.cs
+D:\Users\DannyAlles\source\repos\order\GraduateWorkCompany\GraduateWorkCompany\obj\Debug\Pages\RegistryMakeAnAppointmentPage.baml

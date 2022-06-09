@@ -25,14 +25,13 @@ namespace GraduateWorkCompany.Pages
     public partial class MakeAnAppointmentPage : Page
     {
         private readonly MedContext _medContext;
-        private List<RadioButton> radioButtons;
         private string time;
 
         public MakeAnAppointmentPage()
         {
             _medContext = new MedContext();
-            radioButtons = new List<RadioButton>();
             InitializeComponent();
+            Date.DisplayDateStart = DateTime.Today;
             Doctors.ItemsSource = _medContext.Doctors.ToList();
         }
 
@@ -58,13 +57,15 @@ namespace GraduateWorkCompany.Pages
                 {
                     if (!appointments.Any(x => x.StartsAt.Hour == i && x.StartsAt.Minute == j))
                     {
-                        RadioButton rb = new RadioButton() { GroupName = "Time", Content = $"{i}:{j}" + (j == 0 ? "0" : ""), FontSize = 15 };
-                        rb.Checked += (senderobj, args) =>
+                        if (DateTime.Now.Date < Date.SelectedDate || (DateTime.Now.Hour <= i && DateTime.Now.Minute <= j))
                         {
-                            time = ((senderobj as RadioButton).Content).ToString();
-                        };
-                        sp.Children.Add(rb);
-                        radioButtons.Add(rb);
+                            RadioButton rb = new RadioButton() { GroupName = "Time", Content = $"{i}:{j}" + (j == 0 ? "0" : ""), FontSize = 15 };
+                            rb.Checked += (senderobj, args) =>
+                            {
+                                time = ((senderobj as RadioButton).Content).ToString();
+                            };
+                            sp.Children.Add(rb);
+                        }
                     }
                 }
                 TimeStack.Children.Add(sp);
@@ -81,24 +82,45 @@ namespace GraduateWorkCompany.Pages
 
         private void MakeAnAppointmentBT_Click(object sender, RoutedEventArgs e)
         {
-            var doctorId = Guid.Parse(Doctors.SelectedValue.ToString());
-            var cabId = _medContext.Doctors.FirstOrDefault(x => x.Id == doctorId).CabId;
-            var appointment = new Appointment()
+            try
             {
-                Id = Guid.NewGuid(),
-                CabId = cabId,
-                ClientId = Settings.Default.ClientId,
-                DoctorId = doctorId,
-            };
-            DateTime date = Date.SelectedDate.Value;
-            double hours = Convert.ToInt32(time.Split(':')[0]);
-            double minutes = Convert.ToInt32(time.Split(':')[1]);
-            DateTime a = date.AddHours(hours).AddMinutes(minutes);
-            appointment.StartsAt = a;
+                if (Doctors.SelectedValue != null)
+                {
+                    if (Date.SelectedDate != null)
+                    {
+                        if (!String.IsNullOrEmpty(time))
+                        {
+                            var doctorId = Guid.Parse(Doctors.SelectedValue.ToString());
+                            var cabId = _medContext.Doctors.FirstOrDefault(x => x.Id == doctorId).CabId;
+                            var appointment = new Appointment()
+                            {
+                                Id = Guid.NewGuid(),
+                                CabId = cabId,
+                                ClientId = Settings.Default.ClientId,
+                                DoctorId = doctorId,
+                            };
+                            DateTime date = Date.SelectedDate.Value;
+                            double hours = Convert.ToInt32(time.Split(':')[0]);
+                            double minutes = Convert.ToInt32(time.Split(':')[1]);
+                            DateTime a = date.AddHours(hours).AddMinutes(minutes);
+                            appointment.StartsAt = a;
 
-            _medContext.Appointments.Add(appointment);
-            _medContext.SaveChanges();
-            ManagerFrame.Frame.Navigate(new TimetablePage());
+                            _medContext.Appointments.Add(appointment);
+                            _medContext.SaveChanges();
+                            MessageBox.Show("Запись успешно сделана. Вам придет уведомление на указанный вами номер за день до приема", "Запись", MessageBoxButton.OK, MessageBoxImage.Information);
+                            ManagerFrame.Frame.Navigate(new TimetablePage());
+                        }
+                        else MessageBox.Show("Не было выбрано время", "Запись", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                    else MessageBox.Show("Не выбрана дата", "Запись", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else MessageBox.Show("Доктор не был выбран", "Запись", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Что-то пошло не так", "Запись", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

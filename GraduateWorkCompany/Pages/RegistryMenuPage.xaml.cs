@@ -39,5 +39,15 @@ namespace GraduateWorkCompany.Pages
         {
             ManagerFrame.Frame.Navigate(new DoctorListPage());
         }
+
+        private void TimetableBT_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            ManagerFrame.Frame.Navigate(new RegistryTimetablePage());
+        }
+
+        private void MakeAnAppointmentBT_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            ManagerFrame.Frame.Navigate(new RegistryMakeAnAppointmentPage());
+        }
     }
 }

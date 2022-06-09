@@ -11,8 +11,10 @@
     <Grid>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10">
             <TextBlock x:Name="AccountBT" Text="Мой аккаунт" Margin="0 0 30 0" MouseLeftButtonUp="AccountBT_MouseLeftButtonUp" FontSize="15" Cursor="Hand"/>
+            <TextBlock x:Name="TimetableBT" Text="Расписание врачей" Margin="0 0 30 0" MouseLeftButtonUp="TimetableBT_MouseLeftButtonUp" FontSize="15" Cursor="Hand"/>
             <TextBlock x:Name="CabBT" Text="Список кабинетов" Margin="0 0 30 0" MouseLeftButtonUp="CabBT_MouseLeftButtonUp" FontSize="15" Cursor="Hand"/>
             <TextBlock x:Name="DoctorBT" Text="Список врачей" Margin="0 0 30 0" MouseLeftButtonUp="DoctorBT_MouseLeftButtonUp" FontSize="15" Cursor="Hand"/>
+            <TextBlock x:Name="MakeAnAppointmentBT" Text="Создать новую запись" Margin="0 0 30 0" MouseLeftButtonUp="MakeAnAppointmentBT_MouseLeftButtonUp" FontSize="15" Cursor="Hand"/>
         </StackPanel>   
     </Grid>
 </Page>
